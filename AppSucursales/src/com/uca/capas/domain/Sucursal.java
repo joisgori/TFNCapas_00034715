@@ -13,7 +13,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "public", name = "SUCURSAL")
+@Table(schema = "public", name = "sucursal")
 public class Sucursal {
 	
 	@Id //Indico que éste campo será el id
@@ -42,7 +42,7 @@ public class Sucursal {
 	
 	//Ahora creo una variable que no está en mi base de datos, para terminar la relación, a pesar que no es N:N y 
 	//que no tengo tablas cruzadas.
-	@OneToMany(mappedBy = "SUCURSAL", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "codigo_sucursal", fetch = FetchType.EAGER)
 	private List<Empleado> empleados;
 	
 	//ahora van los setters y getters

@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * base de datos*/
 
 @Entity //Le indico que funcionará como entidad
-@Table(schema="public", name = "EMPLEADO") //Indico el schema del que proviene, a su vez indico el nombre de la tabla
+@Table(schema="public", name = "empleado") //Indico el schema del que proviene, a su vez indico el nombre de la tabla
 public class Empleado {
 	
 	@Id //Indico que éste campo será el id
@@ -40,7 +40,7 @@ public class Empleado {
 	//Acá, ya que hay muchos empleados a una sucursal, tenemos una relación de muchos a uno
 	@ManyToOne(fetch = FetchType.EAGER) //Investigar qué es eager y lazy...
 	@JoinColumn(name = "codigo_sucursal")
-	private Integer codigo_sucursal;
+	private Sucursal codigo_sucursal;
 	
 	//Creo mis métodos setters and getters.
 	public Integer getId_empleado() {
@@ -83,17 +83,16 @@ public class Empleado {
 		this.estado_empleado = estado_empleado;
 	}
 
-	public Integer getCodigo_sucursal() {
+	public Sucursal getCodigo_sucursal() {
 		return codigo_sucursal;
 	}
 
-	public void setCodigo_sucursal(Integer codigo_sucursal) {
+	public void setCodigo_sucursal(Sucursal codigo_sucursal) {
 		this.codigo_sucursal = codigo_sucursal;
 	}
-	
-	//Creo los constructores...
+
 	public Empleado(Integer id_empleado, String nombre_empleado, Integer edad_empleado, String genero_empleado,
-			Boolean estado_empleado, Integer codigo_sucursal) {
+			Boolean estado_empleado, Sucursal codigo_sucursal) {
 		super();
 		this.id_empleado = id_empleado;
 		this.nombre_empleado = nombre_empleado;
@@ -107,7 +106,7 @@ public class Empleado {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	//No sé si debo crear un método delegate para este estado...
 	
 }
