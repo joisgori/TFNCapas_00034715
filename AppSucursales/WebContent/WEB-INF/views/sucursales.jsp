@@ -9,27 +9,35 @@
 </head>
 <body>
 
-<table>
+	<label>Ingrese el ID o Nombre de sucursal a la que desea ver el perfil: </label>
+	<input type="text" value = "Ingrese ID o Nombre de sucursal"><input type = "submit" value = "Ver perfil"
+	onclick=""location.href='${pageContext.request.contextPath}/also'""> <br>
 	
+	<h1>Ahora sí, muestro la tabla </h1>
+	
+<table>
 		<tr>
-			<th> codigo_sucursal </th>
-			<th> nombre_sucursal </th>
-			<th> ubicacion_sucursal </th>
-			<th> horario_apertura </th>
-			<th> horario_cierre </th>
-			<th> numero_mesas </th>
-			<th> nombre_gerente </th>
+			<th> ID sucursal </th>
+			<th> Nombre de sucursal </th>
+		<!--	<th> Ubicación </th>
+			<th> horario de apertura </th>
+			<th> horario de cierre </th>
+			<th> número de mesas </th>
+			<th> nombre del gerente </th>  --> 
+			<th> acciones </th>   
 		</tr>
 		<c:forEach items="${tablaJSPSucursales}" var="tablaJSPSucursales">
 			<tr> 
 			<!-- mando a llamar los nombres que le puse en domain, para llenar esos campos... -->
-				<td> ${tablaJSPSucursales.codigo_sucursal} </td>
+				<td> ${tablaJSPSucursales.codigoSucursal} </td>
 				<td> ${tablaJSPSucursales.nombre_sucursal} </td>
-				<td> ${tablaJSPSucursales.ubicacion_sucursal} </td>
+			<!-- 	<td> ${tablaJSPSucursales.ubicacion_sucursal} </td>
 				<td> ${tablaJSPSucursales.horario_apertura} </td>
 				<td> ${tablaJSPSucursales.horario_cierre} </td>
 				<td> ${tablaJSPSucursales.numero_mesas} </td>
-				<td> ${tablaJSPSucursales.nombre_gerente} </td>
+				<td> ${tablaJSPSucursales.nombre_gerente} </td>  voy a comentar estos campos de momento, que no los necesito -->
+				<td> <button onclick = "location.href='${pageContext.request.contextPath}/SucEmpleados?codigo_sucursal=${tablaJSPSucursales.codigoSucursal}'" 
+				>Ver perfil</button> </td>
 			</tr>
 		</c:forEach>
 		

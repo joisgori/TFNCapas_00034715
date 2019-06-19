@@ -10,5 +10,6 @@ public interface SucursalService {
 	public List<Sucursal> findAll();
 	
 	//public Sucursal findOne(Integer id);
+	public List<Sucursal> findOne(Integer id);
 
 }

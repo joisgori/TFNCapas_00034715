@@ -8,7 +8,13 @@
 </head>
 <body>
 
-	<h1>Ya está funcionando</h1>
+	<h1>Acá irá un login bien chidori</h1>
+	
+	<form action="${pageContext.request.contextPath}/also" method="post">
+		<label>Ingrese su usuario: </label> <input type="text" required>
+		<label>Ingrese contraseña: </label> <input type="text" required>
+		<input type="submit" value = "continuar">
+	</form>
 
 </body>
 </html>

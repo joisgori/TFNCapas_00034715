@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uca.capas.domain.Empleado;
+import com.uca.capas.domain.Sucursal;
 import com.uca.capas.repositories.EmpleadoRepository;
 
 @Service
@@ -18,10 +19,10 @@ public class EmpleadoServiceImp implements EmpleadoService {
 		// TODO Auto-generated method stub
 		return empleadoRepository.findAll();
 	}
-
-	public Empleado findOne(Integer id) {
+/*
+	@Override
+	public List<Empleado> findOne(Sucursal codigo_sucursal) {
 		// TODO Auto-generated method stub
-		return empleadoRepository.findById(id).get();
-	}
-	
+		return empleadoRepository.findByCodigo_sucursal(codigo_sucursal);
+	}*/
 }

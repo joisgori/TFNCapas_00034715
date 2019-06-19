@@ -11,4 +11,7 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
 	//PASO 1 (De la lógica de métodos de funcionamiento [para CRUD]), mando a llamar el método heredado de JpaRepository
 	public List<Sucursal> findAll();//Este método entiendo que ya forma parte de JpaRepository, es decir, ya resuelve
 	//la consulta pra el findAll
+	
+	//Debo hacer una consulta solo por Id ahora;
+	public List<Sucursal> findByCodigoSucursal(Integer codigo_sucursal);
 }

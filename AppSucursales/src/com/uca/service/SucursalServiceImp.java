@@ -20,4 +20,9 @@ public class SucursalServiceImp implements SucursalService {
 		return sucursalRepository.findAll(); //PASO 4, En la implementación retorno la función findAll con la lógica ya de Jpa
 	}
 
+	public List<Sucursal> findOne(Integer id) {
+		// TODO Auto-generated method stub
+		return sucursalRepository.findByCodigoSucursal(id);
+	}
+
 }

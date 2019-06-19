@@ -20,7 +20,7 @@ public class Sucursal {
 	@GeneratedValue(generator="sucursal_codigo_sucursal_seq", strategy = GenerationType.AUTO)//genero una sec para ir llenado
 	@SequenceGenerator(name = "sucursal_codigo_sucursal_seq", sequenceName = "public.sucursal_codigo_sucursal_seq")//el campo
 	@Column(name = "codigo_sucursal")//indico el nombre de la columna, tal cuál lo cree en Postgress
-	private Integer codigo_sucursal;
+	private Integer codigoSucursal;
 	
 	@Column(name = "nombre_sucursal")
 	private String nombre_sucursal;
@@ -47,12 +47,12 @@ public class Sucursal {
 	
 	//ahora van los setters y getters
 
-	public Integer getCodigo_sucursal() {
-		return codigo_sucursal;
+	public Integer getCodigoSucursal() {
+		return codigoSucursal;
 	}
 
-	public void setCodigo_sucursal(Integer codigo_sucursal) {
-		this.codigo_sucursal = codigo_sucursal;
+	public void setCodigoSucursal(Integer codigo_sucursal) {
+		this.codigoSucursal = codigo_sucursal;
 	}
 
 	public String getNombre_sucursal() {
@@ -120,7 +120,7 @@ public class Sucursal {
 	public Sucursal(Integer codigo_sucursal, String nombre_sucursal, String ubicacion_sucursal, String horario_apertura,
 			String horario_cierre, Integer numero_mesas, String nombre_gerente, List<Empleado> empleados) {
 		super();
-		this.codigo_sucursal = codigo_sucursal;
+		this.codigoSucursal = codigo_sucursal;
 		this.nombre_sucursal = nombre_sucursal;
 		this.ubicacion_sucursal = ubicacion_sucursal;
 		this.horario_apertura = horario_apertura;
