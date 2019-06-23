@@ -102,25 +102,20 @@ public class SucursalController {
 		return mav;
 	}
 	
-	
-	/*
-	 * csdc sd
-	 * 	@RequestMapping("/formData")
-	public ModelAndView Todos() {
+	//Ahora crearé los controladores para el delete...
+	@RequestMapping("/ElimSucyEmp")
+	public ModelAndView borrar( //pido el id de sucursal, similar a la lógica del findOne
+			@RequestParam Integer codigo_sucursal) {
 		ModelAndView mav = new ModelAndView();
-		List<Libros> libros = null;
+		Sucursal suc = null;
 		try {
-			libros = librosService.BuscarTodos();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		mav.addObject("resultAutores", librosService.ContarAutores());
-		mav.addObject("resultLibros", librosService.ContarLibros());
-		mav.addObject("libros", libros);
-		mav.setViewName("resultados");
+			sucursalService.deleteById(codigo_sucursal);
+			} catch(Exception e) {
+				log.info("Error"+e.toString());
+			}
+		mav.setViewName("redirect:/also");
 		
 		return mav;
 	}
-	 */
 
 }

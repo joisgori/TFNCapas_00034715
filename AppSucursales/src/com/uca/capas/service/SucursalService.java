@@ -19,5 +19,8 @@ public interface SucursalService {
 	//------Ahora, para hacer los inserts...
 	//creo un método save
 	public int save(Sucursal suc, Integer newRow) throws DataAccessException;
+	
+	//Ahora creo el método para el delete...
+	public void deleteById(Integer id);
 
 }

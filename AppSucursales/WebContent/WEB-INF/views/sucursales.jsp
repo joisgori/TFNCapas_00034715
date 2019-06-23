@@ -33,6 +33,8 @@
 				<!-- Ni comentados puedo dejar los campos en JPS, porque siempre los lee, hibernate, ojo a eso -->
 				<td> <button onclick = "location.href='${pageContext.request.contextPath}/SucEmpleados?codigo_sucursal=${tablaJSPSucursales.codigoSucursal}'" 
 				>Ver perfil</button> </td>
+				<td> <button onClick = "location.href='${pageContext.request.contextPath}/ElimSucyEmp?codigo_sucursal=${tablaJSPSucursales.codigoSucursal}'"
+				> Eliminar Sucursal</button> </td>
 			</tr>
 		</c:forEach>
 		

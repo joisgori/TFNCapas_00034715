@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.hibernate.exception.DataException;
@@ -50,4 +51,14 @@ public class SucursalServiceImp implements SucursalService {
 			return 1;
 		}
 	}
+	
+	//Ahora va la lógica para el delete acá
+	@Transactional
+	public void deleteById(Integer id) throws DataAccessException{
+		StringBuffer sb = new StringBuffer();
+		sb.append("delete from public.sucursal where codigo_sucursal = " + "'" + id + "'");
+		Query query = entityManager.createNativeQuery(sb.toString());
+		query.executeUpdate();
+	}
+	
 }
