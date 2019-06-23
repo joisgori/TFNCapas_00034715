@@ -1,6 +1,8 @@
-package com.uca.service;
+package com.uca.capas.service;
 
 import java.util.List;
+
+import org.springframework.dao.DataAccessException;
 
 import com.uca.capas.domain.Sucursal;
 
@@ -11,5 +13,11 @@ public interface SucursalService {
 	
 	//public Sucursal findOne(Integer id);
 	public List<Sucursal> findOne(Integer id);
+	
+	
+	
+	//------Ahora, para hacer los inserts...
+	//creo un método save
+	public int save(Sucursal suc, Integer newRow) throws DataAccessException;
 
 }

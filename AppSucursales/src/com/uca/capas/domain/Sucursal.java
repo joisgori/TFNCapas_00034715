@@ -18,89 +18,87 @@ public class Sucursal {
 	
 	@Id //Indico que éste campo será el id
 	@GeneratedValue(generator="sucursal_codigo_sucursal_seq", strategy = GenerationType.AUTO)//genero una sec para ir llenado
-	@SequenceGenerator(name = "sucursal_codigo_sucursal_seq", sequenceName = "public.sucursal_codigo_sucursal_seq")//el campo
+	@SequenceGenerator(name = "sucursal_codigo_sucursal_seq", sequenceName = "public.sucursal_codigo_sucursal_seq", allocationSize = 1)//el campo
 	@Column(name = "codigo_sucursal")//indico el nombre de la columna, tal cuál lo cree en Postgress
 	private Integer codigoSucursal;
 	
 	@Column(name = "nombre_sucursal")
-	private String nombre_sucursal;
+	private String nombreSucursal;
 	
 	@Column(name = "ubicacion_sucursal")
-	private String ubicacion_sucursal;
+	private String ubicacionSucursal;
 	
 	@Column(name = "horario_apertura")
-	private String horario_apertura;
+	private String horarioApertura;
 	
 	@Column(name = "horario_cierre")
-	private String horario_cierre;
+	private String horarioCierre;
 	
 	@Column(name = "numero_mesas")
-	private Integer numero_mesas;
+	private Integer numeroMesas;
 	
 	@Column(name = "nombre_gerente")
-	private String nombre_gerente;
+	private String nombreGerente;
 	
 	//Ahora creo una variable que no está en mi base de datos, para terminar la relación, a pesar que no es N:N y 
 	//que no tengo tablas cruzadas.
 	@OneToMany(mappedBy = "codigo_sucursal", fetch = FetchType.EAGER)
 	private List<Empleado> empleados;
-	
-	//ahora van los setters y getters
 
 	public Integer getCodigoSucursal() {
 		return codigoSucursal;
 	}
 
-	public void setCodigoSucursal(Integer codigo_sucursal) {
-		this.codigoSucursal = codigo_sucursal;
+	public void setCodigoSucursal(Integer codigoSucursal) {
+		this.codigoSucursal = codigoSucursal;
 	}
 
-	public String getNombre_sucursal() {
-		return nombre_sucursal;
+	public String getNombreSucursal() {
+		return nombreSucursal;
 	}
 
-	public void setNombre_sucursal(String nombre_sucursal) {
-		this.nombre_sucursal = nombre_sucursal;
+	public void setNombreSucursal(String nombreSucursal) {
+		this.nombreSucursal = nombreSucursal;
 	}
 
-	public String getUbicacion_sucursal() {
-		return ubicacion_sucursal;
+	public String getUbicacionSucursal() {
+		return ubicacionSucursal;
 	}
 
-	public void setUbicacion_sucursal(String ubicacion_sucursal) {
-		this.ubicacion_sucursal = ubicacion_sucursal;
+	public void setUbicacionSucursal(String ubicacionSucursal) {
+		this.ubicacionSucursal = ubicacionSucursal;
 	}
 
-	public String getHorario_apertura() {
-		return horario_apertura;
+	public String getHorarioApertura() {
+		return horarioApertura;
 	}
 
-	public void setHorario_apertura(String horario_apertura) {
-		this.horario_apertura = horario_apertura;
+	public void setHorarioApertura(String horarioApertura) {
+		this.horarioApertura = horarioApertura;
 	}
 
-	public String getHorario_cierre() {
-		return horario_cierre;
+	public String getHorarioCierre() {
+		return horarioCierre;
 	}
 
-	public void setHorario_cierre(String horario_cierre) {
-		this.horario_cierre = horario_cierre;
+	public void setHorarioCierre(String horarioCierre) {
+		this.horarioCierre = horarioCierre;
 	}
 
-	public Integer getNumero_mesas() {
-		return numero_mesas;
+	public Integer getNumeroMesas() {
+		return numeroMesas;
 	}
 
-	public void setNumero_mesas(Integer numero_mesas) {
-		this.numero_mesas = numero_mesas;
+	public void setNumeroMesas(Integer numeroMesas) {
+		this.numeroMesas = numeroMesas;
 	}
 
-	public String getNombre_gerente() {
-		return nombre_gerente;
+	public String getNombreGerente() {
+		return nombreGerente;
 	}
 
-	public void setNombre_gerente(String nombre_gerente) {
-		this.nombre_gerente = nombre_gerente;
+	public void setNombreGerente(String nombreGerente) {
+		this.nombreGerente = nombreGerente;
 	}
 
 	public List<Empleado> getEmpleados() {
@@ -111,24 +109,22 @@ public class Sucursal {
 		this.empleados = empleados;
 	}
 
-	//Acá están los dos constructores...
 	public Sucursal() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Sucursal(Integer codigo_sucursal, String nombre_sucursal, String ubicacion_sucursal, String horario_apertura,
-			String horario_cierre, Integer numero_mesas, String nombre_gerente, List<Empleado> empleados) {
+	public Sucursal(Integer codigoSucursal, String nombreSucursal, String ubicacionSucursal, String horarioApertura,
+			String horarioCierre, Integer numeroMesas, String nombreGerente, List<Empleado> empleados) {
 		super();
-		this.codigoSucursal = codigo_sucursal;
-		this.nombre_sucursal = nombre_sucursal;
-		this.ubicacion_sucursal = ubicacion_sucursal;
-		this.horario_apertura = horario_apertura;
-		this.horario_cierre = horario_cierre;
-		this.numero_mesas = numero_mesas;
-		this.nombre_gerente = nombre_gerente;
+		this.codigoSucursal = codigoSucursal;
+		this.nombreSucursal = nombreSucursal;
+		this.ubicacionSucursal = ubicacionSucursal;
+		this.horarioApertura = horarioApertura;
+		this.horarioCierre = horarioCierre;
+		this.numeroMesas = numeroMesas;
+		this.nombreGerente = nombreGerente;
 		this.empleados = empleados;
 	}
-
 	
 }

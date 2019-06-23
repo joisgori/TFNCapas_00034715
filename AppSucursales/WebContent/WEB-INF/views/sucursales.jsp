@@ -9,9 +9,8 @@
 </head>
 <body>
 
-	<label>Ingrese el ID o Nombre de sucursal a la que desea ver el perfil: </label>
-	<input type="text" value = "Ingrese ID o Nombre de sucursal"><input type = "submit" value = "Ver perfil"
-	onclick=""location.href='${pageContext.request.contextPath}/also'""> <br>
+ 	<label>Nueva sucursal</label>
+	<button onclick="location.href='${pageContext.request.contextPath}/insertSucusal'"> Nueva sucursal </button> <br> 
 	
 	<h1>Ahora sí, muestro la tabla </h1>
 	
@@ -30,12 +29,8 @@
 			<tr> 
 			<!-- mando a llamar los nombres que le puse en domain, para llenar esos campos... -->
 				<td> ${tablaJSPSucursales.codigoSucursal} </td>
-				<td> ${tablaJSPSucursales.nombre_sucursal} </td>
-			<!-- 	<td> ${tablaJSPSucursales.ubicacion_sucursal} </td>
-				<td> ${tablaJSPSucursales.horario_apertura} </td>
-				<td> ${tablaJSPSucursales.horario_cierre} </td>
-				<td> ${tablaJSPSucursales.numero_mesas} </td>
-				<td> ${tablaJSPSucursales.nombre_gerente} </td>  voy a comentar estos campos de momento, que no los necesito -->
+				<td> ${tablaJSPSucursales.nombreSucursal} </td>
+				<!-- Ni comentados puedo dejar los campos en JPS, porque siempre los lee, hibernate, ojo a eso -->
 				<td> <button onclick = "location.href='${pageContext.request.contextPath}/SucEmpleados?codigo_sucursal=${tablaJSPSucursales.codigoSucursal}'" 
 				>Ver perfil</button> </td>
 			</tr>

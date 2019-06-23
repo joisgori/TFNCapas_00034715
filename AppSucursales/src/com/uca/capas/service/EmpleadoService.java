@@ -1,4 +1,4 @@
-package com.uca.service;
+package com.uca.capas.service;
 
 import java.util.List;
 

@@ -25,12 +25,12 @@
 			<tr> 
 			<!-- mando a llamar los nombres que le puse en domain, para llenar esos campos... -->
 				<td> ${DatosSucursal.codigoSucursal} </td>
-				<td> ${DatosSucursal.nombre_sucursal} </td>
-				<td> ${DatosSucursal.ubicacion_sucursal} </td>
-				<td> ${DatosSucursal.horario_apertura} </td>
-				<td> ${DatosSucursal.horario_cierre} </td>
-				<td> ${DatosSucursal.numero_mesas} </td>
-				<td> ${DatosSucursal.nombre_gerente} </td>
+				<td> ${DatosSucursal.nombreSucursal} </td>
+				<td> ${DatosSucursal.ubicacionSucursal} </td>
+				<td> ${DatosSucursal.horarioApertura} </td>
+				<td> ${DatosSucursal.horarioCierre} </td>
+				<td> ${DatosSucursal.numeroMesas} </td>
+				<td> ${DatosSucursal.nombreGerente} </td>
 			</tr>
 		</c:forEach>
 </table>
