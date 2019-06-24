@@ -23,64 +23,64 @@ public class Empleado {
 	@GeneratedValue(generator="empleado_codigo_empleado_seq", strategy = GenerationType.AUTO)//genero una sec para ir llenado
 	@SequenceGenerator(name = "empleado_codigo_empleado_seq", sequenceName = "public.empleado_codigo_empleado_seq")//el campo
 	@Column(name = "codigo_empleado")//indico el nombre de la columna, tal cuál lo cree en Postgress
-	private Integer id_empleado; //creo una variable para almecenar el campo/los campos (en el resto de esta clase
+	private Integer idEmpleado; //creo una variable para almecenar el campo/los campos (en el resto de esta clase
 
 	@Column(name = "nombre_empleado")
-	private String nombre_empleado;
+	private String nombreEmpleado;
 	
 	@Column(name = "edad_empleado")
-	private Integer edad_empleado;
+	private Integer edadEmpleado;
 	
 	@Column(name = "genero_empleado")
-	private String genero_empleado;
+	private String generoEmpleado;
 	
 	@Column(name = "estado_empleado")
-	private Boolean estado_empleado;
+	private Boolean estadoEmpleado;
 	
 	//Acá, ya que hay muchos empleados a una sucursal, tenemos una relación de muchos a uno
 	@ManyToOne(fetch = FetchType.EAGER) //Investigar qué es eager y lazy...
 	@JoinColumn(name = "codigo_sucursal")
 	private Sucursal codigo_sucursal;
-	
 	//Creo mis métodos setters and getters.
-	public Integer getId_empleado() {
-		return id_empleado;
+
+	public Integer getIdEmpleado() {
+		return idEmpleado;
 	}
 
-	public void setId_empleado(Integer id_empleado) {
-		this.id_empleado = id_empleado;
+	public void setIdEmpleado(Integer idEmpleado) {
+		this.idEmpleado = idEmpleado;
 	}
 
-	public String getNombre_empleado() {
-		return nombre_empleado;
+	public String getNombreEmpleado() {
+		return nombreEmpleado;
 	}
 
-	public void setNombre_empleado(String nombre_empleado) {
-		this.nombre_empleado = nombre_empleado;
+	public void setNombreEmpleado(String nombreEmpleado) {
+		this.nombreEmpleado = nombreEmpleado;
 	}
 
-	public Integer getEdad_empleado() {
-		return edad_empleado;
+	public Integer getEdadEmpleado() {
+		return edadEmpleado;
 	}
 
-	public void setEdad_empleado(Integer edad_empleado) {
-		this.edad_empleado = edad_empleado;
+	public void setEdadEmpleado(Integer edadEmpleado) {
+		this.edadEmpleado = edadEmpleado;
 	}
 
-	public String getGenero_empleado() {
-		return genero_empleado;
+	public String getGeneroEmpleado() {
+		return generoEmpleado;
 	}
 
-	public void setGenero_empleado(String genero_empleado) {
-		this.genero_empleado = genero_empleado;
+	public void setGeneroEmpleado(String generoEmpleado) {
+		this.generoEmpleado = generoEmpleado;
 	}
 
-	public Boolean getEstado_empleado() {
-		return estado_empleado;
+	public Boolean getEstadoEmpleado() {
+		return estadoEmpleado;
 	}
 
-	public void setEstado_empleado(Boolean estado_empleado) {
-		this.estado_empleado = estado_empleado;
+	public void setEstadoEmpleado(Boolean estadoEmpleado) {
+		this.estadoEmpleado = estadoEmpleado;
 	}
 
 	public Sucursal getCodigo_sucursal() {
@@ -91,14 +91,14 @@ public class Empleado {
 		this.codigo_sucursal = codigo_sucursal;
 	}
 
-	public Empleado(Integer id_empleado, String nombre_empleado, Integer edad_empleado, String genero_empleado,
-			Boolean estado_empleado, Sucursal codigo_sucursal) {
+	public Empleado(Integer idEmpleado, String nombreEmpleado, Integer edadEmpleado, String generoEmpleado,
+			Boolean estadoEmpleado, Sucursal codigo_sucursal) {
 		super();
-		this.id_empleado = id_empleado;
-		this.nombre_empleado = nombre_empleado;
-		this.edad_empleado = edad_empleado;
-		this.genero_empleado = genero_empleado;
-		this.estado_empleado = estado_empleado;
+		this.idEmpleado = idEmpleado;
+		this.nombreEmpleado = nombreEmpleado;
+		this.edadEmpleado = edadEmpleado;
+		this.generoEmpleado = generoEmpleado;
+		this.estadoEmpleado = estadoEmpleado;
 		this.codigo_sucursal = codigo_sucursal;
 	}
 
@@ -106,7 +106,5 @@ public class Empleado {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	//No sé si debo crear un método delegate para este estado...
 	
 }

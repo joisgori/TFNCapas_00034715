@@ -35,6 +35,9 @@
 		<br>
 		<h2>Acá colocaré la info de sus empleados correspondientes: </h2>
 		
+		<label>Agregar nuevo empleado</label>
+	<button onclick="location.href='${pageContext.request.contextPath}/insertEmp'">Nuevo empleado</button> <br> 
+		
 		<table>
 				<tr>
 			<th> ID empleado </th>
@@ -42,19 +45,21 @@
 			<th> Edad de empleado </th>
 			<th> Género de empleado </th>
 			<th> Estado de empleado </th>
-			<th> Id sucursal correspondiente </th> <!-- este campo no será necesario, 
-			a menos que desee mostrar la relación directa entre el empleado y la sucursal en una misma tabla,
-			me tocará realizar una clase DTO -->
+			<!-- el campo de id sucursal correspondiente no será necesario, a menos que desee mostrar la 
+			relación directa entre el empleado y la sucursal en una misma tabla, me tocará realizar una clase DTO -->
 		</tr>
 		<c:forEach items="${DatosEmpleado}" var="DatosEmpleado">
 			<tr> 
 			<!-- mando a llamar los nombres que le puse en domain, para llenar esos campos... -->
-				<td> ${DatosEmpleado.id_empleado} </td>
-				<td> ${DatosEmpleado.nombre_empleado} </td>
-				<td> ${DatosEmpleado.edad_empleado} </td>
-				<td> ${DatosEmpleado.genero_empleado} </td>
-				<td> ${DatosEmpleado.estado_empleado} </td>
-				<!-- Como te digo, la tabla que muestra el id de la sucursal, nos sería necesario pues será repetitivo... -->
+				<td> ${DatosEmpleado.idEmpleado} </td>
+				<td> ${DatosEmpleado.nombreEmpleado} </td>
+				<td> ${DatosEmpleado.edadEmpleado} </td>
+				<td> ${DatosEmpleado.generoEmpleado} </td>
+				<td> ${DatosEmpleado.estadoEmpleado} </td>
+				<td> <button onClick = "location.href='${pageContext.request.contextPath}/ElimEmp?codigo_empleado=${DatosEmpleado.idEmpleado}'"
+				> Eliminar Empleado</button> </td>
+				<td> <button onclick = "location.href='${pageContext.request.contextPath}/EditarEmp?codigo_empleado=${DatosEmpleado.idEmpleado}'" 
+				>Editar Empleado</button> </td>
 			</tr>
 		</c:forEach>
 </table>

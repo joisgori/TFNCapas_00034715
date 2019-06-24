@@ -57,7 +57,7 @@ public class SucursalController {
 		Sucursal sucursal = null;
  		try {
  			sucursal = sucursalRepository.findByCodigoSucursal(codigo_sucursal);
- 			empleados = sucursalRepository.findAll().get(codigo_sucursal-1).getEmpleados();
+ 			empleados = sucursal.getEmpleados();
  			
  		}catch(Exception e) {
 			e.printStackTrace();
