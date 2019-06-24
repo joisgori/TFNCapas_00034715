@@ -21,7 +21,7 @@ public class Empleado {
 	
 	@Id //Indico que éste campo será el id
 	@GeneratedValue(generator="empleado_codigo_empleado_seq", strategy = GenerationType.AUTO)//genero una sec para ir llenado
-	@SequenceGenerator(name = "empleado_codigo_empleado_seq", sequenceName = "public.empleado_codigo_empleado_seq")//el campo
+	@SequenceGenerator(name = "empleado_codigo_empleado_seq", sequenceName = "public.empleado_codigo_empleado_seq", allocationSize = 1)//el campo
 	@Column(name = "codigo_empleado")//indico el nombre de la columna, tal cuál lo cree en Postgress
 	private Integer idEmpleado; //creo una variable para almecenar el campo/los campos (en el resto de esta clase
 

@@ -25,6 +25,10 @@ public class SucursalController {
 	@Autowired
 	SucursalService sucursalService;
 	
+	//esto para el usuario
+	@Autowired
+	
+	
 	//PASO 6, creo el controlador :V -- llegado este punto, ya me está devolviendo lo que hay en mi base de datos...
 	
 	//Objeto Logger

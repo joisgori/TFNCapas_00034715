@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(schema = "public", name = "USUARIO")
@@ -14,13 +15,15 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(generator="usuario_codigo_usuario_seq", strategy = GenerationType.AUTO)//genero una sec para ir llenado
-	@SequenceGenerator(name = "usuario_codigo_usuario_seq", sequenceName = "public.usuario_codigo_usuario_seq")//el campo
+	@SequenceGenerator(name = "usuario_codigo_usuario_seq", sequenceName = "public.usuario_codigo_usuario_seq", allocationSize = 1)//el campo
 	@Column(name = "id_usuario")
 	private Integer id_usuario;
 	
+	@NotEmpty(message="No puede estar vacío")
 	@Column(name = "usuario")
 	private String usuario;
 	
+	@NotEmpty(message="No puede estar vacío")
 	@Column(name = "contraseña")
 	private String contraseña;
 

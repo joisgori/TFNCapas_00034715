@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +10,31 @@
 </head>
 <body>
 
-	<h1>Acá irá un login bien chidori</h1>
+	<h1>Restaurantes rústico</h1>
 	
-	<form action="${pageContext.request.contextPath}/also" method="post">
-		<label>Ingrese su usuario: </label> <input type="text" required>
-		<label>Ingrese contraseña: </label> <input type="text" required>
-		<input type="submit" value = "continuar">
-	</form>
+	<form:form method="post" modelAttribute="usuario" action="${pageContext.request.contextPath}/also">
+	<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Restaurante Rústico</div>
+		</div>
+		<br>
+		<div class="login">
+		
+				<form:input type="text" path="usuario" placeholder="usuario" name="usuario"/>
+				<form:errors path="usuario" cssStyle="color:#FF0000;"></form:errors><br>
+				
+				<form:input type="password" path="contraseña" placeholder="contraseña" name="contraseña"/>
+				<form:errors path="contraseña" cssStyle="color:#FF0000;"></form:errors><br>
+				
+				<input type="submit" value="Login">
+		</div>
+	</form:form>
+	
+	<c:if test = "${resultado eq 0}">
+		<h2>El usuario NO existe en la base de datos</h2>
+</c:if>
+
 
 </body>
 </html>

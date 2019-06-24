@@ -13,12 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.uca.capas.domain.Empleado;
 import com.uca.capas.domain.Sucursal;
 import com.uca.capas.service.EmpleadoService;
+import com.uca.capas.service.SucursalService;
 
 @Controller
 public class EmpleadoController {
 	
 	@Autowired
 	EmpleadoService empleadoService;
+	
+	@Autowired
+	SucursalService sucursalService;
 	
 	//Objeto Logger
 	static Logger log = Logger.getLogger(MainController.class.getName());
@@ -49,7 +53,7 @@ public class EmpleadoController {
 			log.info("Error"+e.toString());
 		}
 		mav.addObject("empleado", new Empleado());
-		mav.setViewName("suc_empleados");
+		mav.setViewName("redirect:/also");
 		return mav;
 	}
 	
@@ -59,15 +63,18 @@ public class EmpleadoController {
 	//Ahora el método Eliminar ----------
 	@RequestMapping("/ElimEmp")
 	public ModelAndView borrar( //pido el id de empleado, similar a la lógica del findOne
-			@RequestParam Integer codigo_empleado) { //el nombre de la col de la DB
+			@RequestParam Integer codigo_empleado, @RequestParam Integer codigo_sucursal) { //el nombre de la col de la DB
 		ModelAndView mav = new ModelAndView();
 		Empleado emp = null;
+		Sucursal sucursal = null;
 		try {
 			empleadoService.deleteById(codigo_empleado);
+			sucursal = sucursalService.findOne(codigo_sucursal);
 		}catch(Exception e) {
 			log.info("Error"+e.toString());
 		}
-		mav.setViewName("redirect:/also");
+		mav.addObject("DatosSucursal", sucursal);
+		mav.setViewName("suc_empleados");
 		return mav;
 	}
 	

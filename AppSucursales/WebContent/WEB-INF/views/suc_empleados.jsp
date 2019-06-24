@@ -36,7 +36,7 @@
 		<h2>Acá colocaré la info de sus empleados correspondientes: </h2>
 		
 		<label>Agregar nuevo empleado</label>
-	<button onclick="location.href='${pageContext.request.contextPath}/insertEmp'">Nuevo empleado</button> <br> 
+	<button onclick="location.href='${pageContext.request.contextPath}/insertEmp?codigo_sucursal=${DatosSucursal.codigoSucursal}'">Nuevo empleado</button> <br> 
 		
 		<table>
 				<tr>
@@ -56,9 +56,9 @@
 				<td> ${DatosEmpleado.edadEmpleado} </td>
 				<td> ${DatosEmpleado.generoEmpleado} </td>
 				<td> ${DatosEmpleado.estadoEmpleado} </td>
-				<td> <button onClick = "location.href='${pageContext.request.contextPath}/ElimEmp?codigo_empleado=${DatosEmpleado.idEmpleado}'"
+				<td> <button onClick = "location.href='${pageContext.request.contextPath}/ElimEmp?codigo_empleado=${DatosEmpleado.idEmpleado}&codigo_sucursal=${DatosSucursal.codigoSucursal}'"
 				> Eliminar Empleado</button> </td>
-				<td> <button onclick = "location.href='${pageContext.request.contextPath}/EditarEmp?codigo_empleado=${DatosEmpleado.idEmpleado}'" 
+				<td> <button onclick = "location.href='${pageContext.request.contextPath}/EditarEmp?codigo_empleado=${DatosEmpleado.idEmpleado}&codigo_sucursal=${DatosSucursal.codigoSucursal}'" 
 				>Editar Empleado</button> </td>
 			</tr>
 		</c:forEach>
