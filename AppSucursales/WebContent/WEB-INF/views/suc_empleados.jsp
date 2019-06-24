@@ -34,7 +34,7 @@
 			</tr>
 </table>
 		<br>
-		<h2>Empleados de la sucursal correspondiente: </h2>
+		<h2>Empleados de la sucursal correspondiente:</h2>
 		
 		<label>Agregar nuevo empleado</label>
 	<button onclick="location.href='${pageContext.request.contextPath}/insertEmp?codigo_sucursal=${DatosSucursal.codigoSucursal}'">Nuevo empleado</button> <br> 
