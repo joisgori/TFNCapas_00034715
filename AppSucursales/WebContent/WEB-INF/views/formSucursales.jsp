@@ -13,28 +13,28 @@
 <form:form id="form1" method="post" modelAttribute="sucursal" action="${pageContext.request.contextPath}/guardarSucursal"> <!-- Para qué 
 es que me sirve ese modelAttribute??  -->
 				
-				<form:input type="hidden" id="idSuc" path="codigoSucursal"/>
+				<form:input type="hidden" id="idSuc" path="codigoSucursal"/> <br>
 				
-				<label><b>Nombre sucursal:</b></label>
-				<form:input class="inputs" type="text" id="nombre" path="nombreSucursal" placeholder="Ingrese el nombre de sucursal" />
+				<label><b>Nombre sucursal:</b></label> <br>
+				<form:input class="inputs" type="text" id="nombre" path="nombreSucursal" placeholder="Ingrese el nombre de sucursal" /> <br>
 				<!-- para qué srive el path ...  -->
 c
-				<b>Ubicación sucursal:</b>
-				<form:input class="inputs" type="text" id="ubicacion" path="ubicacionSucursal" placeholder="Ingrese la dirección de la sucursal" />
+				<b>Ubicación sucursal:</b> <br>
+				<form:input class="inputs" type="text" id="ubicacion" path="ubicacionSucursal" placeholder="Ingrese la dirección de la sucursal" /> <br>
 
-				<b>Horario de apertura:</b>
-				<form:input class="inputs" type="text" id="horarioAp" path="horarioApertura" placeholder="Ingrese hora en formato 12H /AM-PM" />
+				<b>Horario de apertura:</b> <br>
+				<form:input class="inputs" type="text" id="horarioAp" path="horarioApertura" placeholder="Ingrese hora en formato 12H /AM-PM" /> <br>
 				
-				<b>Horario de cierre: </b>
-				<form:input class="inputs" type="text" id="horarioCi" path="horarioCierre" placeholder="Ingrese hora en formato 12H /AM-PM" />
+				<b>Horario de cierre: </b> <br>
+				<form:input class="inputs" type="text" id="horarioCi" path="horarioCierre" placeholder="Ingrese hora en formato 12H /AM-PM" /> <br>
 			
-				<b>Número de mesas: </b>
-				<form:input class="inputs" type="text" id="mesas" path="numeroMesas" placeholder="Ingrese cantidad de mesas" />
+				<b>Número de mesas: </b> <br>
+				<form:input class="inputs" type="text" id="mesas" path="numeroMesas" placeholder="Ingrese cantidad de mesas" /> <br>
 			
-				<b>Nombre del gerente: </b>
-				<form:input class="inputs" type="text" id="nombreGere" path="nombreGerente" placeholder="Ingrese el nombre del gerente" />
+				<b>Nombre del gerente: </b> <br>
+				<form:input class="inputs" type="text" id="nombreGere" path="nombreGerente" placeholder="Ingrese el nombre del gerente" /> <br>
 				
-				<input id="save" class="myButton" type="submit" value="Guardar la sucursal" />
+				<input id="save" class="myButton" type="submit" value="Guardar la sucursal" /> <br>
 		
 		<!--  esto qué función está realizando?? -->
 		<!-- <c:choose>

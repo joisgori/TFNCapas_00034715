@@ -7,17 +7,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sucursales WebAplication</title>
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
 <body>
-
-	<h1>Restaurantes rústico</h1>
 	
 	<form:form method="post" modelAttribute="usuario" action="${pageContext.request.contextPath}/verus">
-	<div class="body"></div>
-		<div class="grad"></div>
-		<div class="header">
-			<div>Restaurante Rústico</div>
-		</div>
+	<div class="body"> <h1>Restaurantes pollos rústico </h1> </div>
 		<br>
 		<div class="login">
 		
@@ -35,6 +30,7 @@
 		<h2>El usuario NO existe en la base de datos</h2>
 </c:if>
 
+<a href="https://codepen.io/davinci/" target="_blank"></a>
 
 </body>
 </html>

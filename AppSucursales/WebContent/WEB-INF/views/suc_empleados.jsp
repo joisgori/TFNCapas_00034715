@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sucursal con sus empleados</title>
+<link rel="stylesheet" href="resources/css/tablas.css">
 </head>
 <body>
 
@@ -33,7 +34,7 @@
 			</tr>
 </table>
 		<br>
-		<h2>Acá colocaré la info de sus empleados correspondientes: </h2>
+		<h2>Empleados de la sucursal correspondiente: </h2>
 		
 		<label>Agregar nuevo empleado</label>
 	<button onclick="location.href='${pageContext.request.contextPath}/insertEmp?codigo_sucursal=${DatosSucursal.codigoSucursal}'">Nuevo empleado</button> <br> 

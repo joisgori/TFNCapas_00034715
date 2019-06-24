@@ -6,13 +6,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Tablas sucursales</title>
+<link rel="stylesheet" href="resources/css/tablas.css">
 </head>
 <body>
 
  	<label>Nueva sucursal</label>
 	<button onclick="location.href='${pageContext.request.contextPath}/insertSucusal'"> Nueva sucursal </button> <br> 
 	
-	<h1>Ahora sí, muestro la tabla </h1>
+	<h1>Sucursales disponibles</h1>
 	
 <table>
 		<tr>
