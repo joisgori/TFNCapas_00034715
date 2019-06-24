@@ -12,13 +12,13 @@ public interface SucursalService {
 	public List<Sucursal> findAll();
 	
 	//public Sucursal findOne(Integer id);
-	public List<Sucursal> findOne(Integer id);
+	public Sucursal findOne(Integer id);
 	
 	
 	
 	//------Ahora, para hacer los inserts...
 	//creo un método save
-	public int save(Sucursal suc, Integer newRow) throws DataAccessException;
+	public Sucursal save(Sucursal suc);
 	
 	//Ahora creo el método para el delete...
 	public void deleteById(Integer id);

@@ -35,6 +35,8 @@
 				>Ver perfil</button> </td>
 				<td> <button onClick = "location.href='${pageContext.request.contextPath}/ElimSucyEmp?codigo_sucursal=${tablaJSPSucursales.codigoSucursal}'"
 				> Eliminar Sucursal</button> </td>
+				<td> <button onclick = "location.href='${pageContext.request.contextPath}/EditarSuc?codigo_sucursal=${tablaJSPSucursales.codigoSucursal}'" 
+				>Editar Sucursal</button> </td>
 			</tr>
 		</c:forEach>
 		

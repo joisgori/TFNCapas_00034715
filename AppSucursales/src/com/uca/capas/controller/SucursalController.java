@@ -54,7 +54,7 @@ public class SucursalController {
 			@RequestParam Integer codigo_sucursal) {
 		ModelAndView mav = new ModelAndView();
 		List<Empleado> empleados = null;
-		List<Sucursal> sucursal = null;
+		Sucursal sucursal = null;
  		try {
  			sucursal = sucursalRepository.findByCodigoSucursal(codigo_sucursal);
  			empleados = sucursalRepository.findAll().get(codigo_sucursal-1).getEmpleados();
@@ -90,7 +90,7 @@ public class SucursalController {
 		
 		try {
 			log.info("Agregando nueva sucursal");
-			sucursalService.save(suc, 1);//El uno representa que es una nueva instancia
+			sucursalService.save(suc);//El uno representa que es una nueva instancia
 			}catch(Exception e) {
 				log.info("Error"+e.toString());
 			}
@@ -99,6 +99,18 @@ public class SucursalController {
 		mav.addObject("tablaJSPSucursales", sucursal);
 		//acontinuación nombre de la view
 		mav.setViewName("sucursales");
+		return mav;
+	}
+	
+	//-------> hoy sí, acá voy con editar xd
+	@RequestMapping("/EditarSuc")
+	public ModelAndView editar(
+			@RequestParam Integer codigo_sucursal) {
+		ModelAndView mav = new ModelAndView();
+		//con el id hago un nuevo find one y creo un objeto de tipo sucursal, y con el addObject relleno mi formulario pasado xd
+		Sucursal suc = sucursalRepository.findByCodigoSucursal(codigo_sucursal);
+		mav.addObject("sucursal", suc);
+		mav.setViewName("formSucursales");
 		return mav;
 	}
 	

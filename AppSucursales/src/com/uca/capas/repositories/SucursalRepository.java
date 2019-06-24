@@ -13,5 +13,5 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
 	//la consulta pra el findAll
 	
 	//Debo hacer una consulta solo por Id ahora;
-	public List<Sucursal> findByCodigoSucursal(Integer codigo_sucursal);
+	public Sucursal findByCodigoSucursal(Integer codigo_sucursal);
 }

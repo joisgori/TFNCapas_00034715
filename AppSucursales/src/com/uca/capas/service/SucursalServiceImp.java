@@ -32,7 +32,7 @@ public class SucursalServiceImp implements SucursalService {
 		return sucursalRepository.findAll(); //PASO 4, En la implementación retorno la función findAll con la lógica ya de Jpa
 	}
 
-	public List<Sucursal> findOne(Integer id) {
+	public Sucursal findOne(Integer id) {
 		// TODO Auto-generated method stub
 		return sucursalRepository.findByCodigoSucursal(id);
 	}
@@ -40,16 +40,8 @@ public class SucursalServiceImp implements SucursalService {
 	
 	//Acá implemento la lógica del insert...
 	@Transactional
-	public int save(Sucursal suc, Integer newRow) throws DataAccessException{
-		try {
-			if(newRow == 1) entityManager.persist(suc); //nueva fila uso persist
-			else entityManager.merge(suc); //actualiza datos de una instancia ya existente dentro de la base 
-			entityManager.flush(); //Esto me sincroniza con la base de datos
-			return 1;
-		}catch (Throwable e) {
-			e.printStackTrace();
-			return 1;
-		}
+	public Sucursal save(Sucursal suc){
+		return sucursalRepository.save(suc);
 	}
 	
 	//Ahora va la lógica para el delete acá

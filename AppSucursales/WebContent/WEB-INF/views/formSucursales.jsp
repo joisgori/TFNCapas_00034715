@@ -12,7 +12,9 @@
 
 <form:form id="form1" method="post" modelAttribute="sucursal" action="${pageContext.request.contextPath}/guardarSucursal"> <!-- Para qué 
 es que me sirve ese modelAttribute??  -->
-		
+				
+				<form:input type="hidden" id="idSuc" path="codigoSucursal"/>
+				
 				<label><b>Nombre sucursal:</b></label>
 				<form:input class="inputs" type="text" id="nombre" path="nombreSucursal" placeholder="Ingrese el nombre de sucursal" />
 				<!-- para qué srive el path ...  -->

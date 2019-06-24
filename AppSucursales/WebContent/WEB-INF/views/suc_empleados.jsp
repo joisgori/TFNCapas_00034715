@@ -21,7 +21,6 @@
 			<th> número de mesas </th>
 			<th> nombre del gerente </th>
 		</tr>
-		<c:forEach items="${DatosSucursal}" var="DatosSucursal">
 			<tr> 
 			<!-- mando a llamar los nombres que le puse en domain, para llenar esos campos... -->
 				<td> ${DatosSucursal.codigoSucursal} </td>
@@ -32,7 +31,6 @@
 				<td> ${DatosSucursal.numeroMesas} </td>
 				<td> ${DatosSucursal.nombreGerente} </td>
 			</tr>
-		</c:forEach>
 </table>
 		<br>
 		<h2>Acá colocaré la info de sus empleados correspondientes: </h2>
