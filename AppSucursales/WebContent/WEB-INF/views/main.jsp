@@ -12,7 +12,7 @@
 
 	<h1>Restaurantes rústico</h1>
 	
-	<form:form method="post" modelAttribute="usuario" action="${pageContext.request.contextPath}/also">
+	<form:form method="post" modelAttribute="usuario" action="${pageContext.request.contextPath}/verus">
 	<div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
